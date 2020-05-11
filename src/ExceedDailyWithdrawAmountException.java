@@ -1,4 +1,4 @@
-public class ExceedDailyWithdrawAmountException extends Throwable {
+public class ExceedDailyWithdrawAmountException extends RuntimeException {
     public ExceedDailyWithdrawAmountException(String s) {
         super(s);
     }

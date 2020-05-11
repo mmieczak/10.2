@@ -38,10 +38,6 @@ public class CashMachine {
         return new BankAccount(person, startAmount);
     }
 
-    private static void showAccount(BankAccount bankAccount) {
-        System.out.println(bankAccount.toString());
-    }
-
     private static String getMenuOption(String question, int minTreshold, int maxTreshold, String errorMessage) {
         Scanner scanner = new Scanner(System.in);
         System.out.println(question);
