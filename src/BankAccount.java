@@ -21,7 +21,7 @@ public class BankAccount implements AccountOperations {
     }
 
     @Override
-    public void withdraw(double amount) /*throws ExceedDailyWithdrawAmountException, NotSUfficientMoneyException */{
+    public void withdraw(double amount) {
         if (amount > totalCash)
             throw new NotSUfficientMoneyException("There is not enought money on your account");
         else if (amount <= MAXIMUM_WITHDRAW_AMOUNT)
