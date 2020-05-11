@@ -10,9 +10,9 @@ public class CashMachine {
             bankAccount = CreateBankAccount(person, 3500);
             bankAccount.deposit(1300);
             showAccount(bankAccount);
-            bankAccount.withdraw(5000);
+            bankAccount.withdraw(1100);
             showAccount(bankAccount);
-        } catch (NullPointerException | IllegalArgumentException e) {
+        } catch (NotSUfficientMoneyException | ExceedDailyWithdrawAmountException e) {
             e.printStackTrace();
         }
     }
