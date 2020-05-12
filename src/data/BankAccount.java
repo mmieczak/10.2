@@ -1,3 +1,8 @@
+package data;
+
+import utils.ExceedDailyWithdrawAmountException;
+import utils.NotSUfficientMoneyException;
+
 public class BankAccount implements AccountOperations {
     public static final int MAXIMUM_WITHDRAW_AMOUNT = 1000;
     private final Person person;
@@ -10,7 +15,8 @@ public class BankAccount implements AccountOperations {
     }
 
     public BankAccount(Person person) {
-        if (person == null) throw new NullPointerException("Unable to create account without valid Person details");
+        if (person == null)
+            throw new NullPointerException("Unable to create account without valid data.Person details");
         this.person = person;
         this.totalCash = 0;
     }
@@ -36,7 +42,7 @@ public class BankAccount implements AccountOperations {
 
     @Override
     public String toString() {
-        return "BankAccount{" +
+        return "data.BankAccount{" +
                 "person=" + person +
                 ", totalCash=" + totalCash +
                 '}';

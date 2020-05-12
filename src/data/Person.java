@@ -1,3 +1,5 @@
+package data;
+
 public class Person {
     private final String firstName;
     private final String lastName;
@@ -22,7 +24,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return "data.Person{" +
                 "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", age=" + age +

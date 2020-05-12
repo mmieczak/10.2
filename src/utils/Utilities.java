@@ -1,9 +1,10 @@
+package utils;
+
+import data.Person;
+
 import java.util.Scanner;
 
 public class Utilities {
-
-    private static Person Optional;
-    private static Object Person;
 
     public static String[] collectPersonDetails() {
         Scanner scanner = new Scanner(System.in);
