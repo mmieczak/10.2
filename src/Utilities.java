@@ -1,6 +1,10 @@
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Utilities {
+
+    private static Person Optional;
+    private static Object Person;
 
     public static String[] collectPersonDetails() {
         Scanner scanner = new Scanner(System.in);
@@ -12,20 +16,23 @@ public class Utilities {
         String age = scanner.nextLine();
         System.out.print("PESEL: ");
         String pesel = scanner.nextLine();
-        scanner.close();
 
         return new String[]{name, lastName, age, pesel};
     }
 
-    public static Person registerPerson(String[] personDetails) {
-        Person person = null;
+    public static boolean validatePerson (String[] personDetails) {
         try {
-            return new Person(personDetails[0], personDetails[1], Integer.parseInt(personDetails[2]), Long.parseLong(personDetails[3]));
-        } catch (RuntimeException e) {
-            e.printStackTrace();
-            return null;
+            new Person(personDetails[0], personDetails[1], Integer.parseInt(personDetails[2]), Long.parseLong(personDetails[3]));
+        }catch(RuntimeException e) {
+            return false;
         }
+        return true;
     }
+
+    public static Person registerPerson(String[] personDetails) {
+            return new Person(personDetails[0], personDetails[1], Integer.parseInt(personDetails[2]), Long.parseLong(personDetails[3]));
+        }
+
 }
 
 

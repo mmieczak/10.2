@@ -6,9 +6,9 @@ public class Person {
 
     public Person(String firstName, String lastName, int age, long pesel) {
         if (firstName == null || lastName == null)
-            throw new RuntimeException("First & second name cannot be null");
+            throw new IllegalArgumentException("First & second name cannot be null");
         else if (firstName.length() < 3 || lastName.length() < 3)
-            throw new RuntimeException("First or second name are less then 2 characters");
+            throw new IllegalArgumentException("First or second name are less then 2 characters");
         else {
             this.firstName = firstName;
             this.lastName = lastName;

@@ -3,11 +3,15 @@ import java.util.Scanner;
 public class CashMachine {
 
     public static void main(String[] args) {
+        //Methods used for 10.2_part1
+       /* String[] details = Utilities.collectPersonDetails();
+        if (Utilities.validatePerson(details))
+            Utilities.registerPerson(details);*/
 
         BankAccount[] bankAccounts = new BankAccount[3];
-        bankAccounts[0] = CreateBankAccount(Utilities.registerPerson(new String[]{"Mike", "Tyson", "60", "12313213213"}), 0);
-        bankAccounts[1] = CreateBankAccount(Utilities.registerPerson(new String[]{"Bill", "Clinton", "65", "564645654654"}), 1000);
-        bankAccounts[2] = CreateBankAccount(Utilities.registerPerson(new String[]{"Janusz", "Korwin", "76", "45654645645"}), 20000);
+        bankAccounts[0] = createBankAccount(Utilities.registerPerson(new String[]{"Mike", "Tyson", "60", "12313213213"}), 0);
+        bankAccounts[1] = createBankAccount(Utilities.registerPerson(new String[]{"Bill", "Clinton", "65", "564645654654"}), 1000);
+        bankAccounts[2] = createBankAccount(Utilities.registerPerson(new String[]{"Janusz", "Korwin", "76", "45654645645"}), 20000);
 
 
         Scanner scanner = new Scanner(System.in);
@@ -34,7 +38,7 @@ public class CashMachine {
         } while ((scanner.nextLine().equalsIgnoreCase("y")));
     }
 
-    private static BankAccount CreateBankAccount(Person person, double startAmount) {
+    private static BankAccount createBankAccount(Person person, double startAmount) {
         return new BankAccount(person, startAmount);
     }
 
