@@ -1,4 +1,3 @@
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Utilities {
@@ -20,18 +19,18 @@ public class Utilities {
         return new String[]{name, lastName, age, pesel};
     }
 
-    public static boolean validatePerson (String[] personDetails) {
+    public static boolean validatePerson(String[] personDetails) {
         try {
             new Person(personDetails[0], personDetails[1], Integer.parseInt(personDetails[2]), Long.parseLong(personDetails[3]));
-        }catch(RuntimeException e) {
+        } catch (RuntimeException e) {
             return false;
         }
         return true;
     }
 
     public static Person registerPerson(String[] personDetails) {
-            return new Person(personDetails[0], personDetails[1], Integer.parseInt(personDetails[2]), Long.parseLong(personDetails[3]));
-        }
+        return new Person(personDetails[0], personDetails[1], Integer.parseInt(personDetails[2]), Long.parseLong(personDetails[3]));
+    }
 
 }
 
